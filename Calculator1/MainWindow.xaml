@@ -1,0 +1,73 @@
+﻿<Window x:Class="Calculator1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kalkulator z zegarem" Height="550" Width="320">
+
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <!-- miejsce na zegar -->
+            <RowDefinition Height="Auto"/>
+            <!-- wynik -->
+            <RowDefinition Height="*"/>
+            <!-- przyciski -->
+        </Grid.RowDefinitions>
+
+        <!-- MIEJSCE NA ZEGAR -->
+        <Border Grid.Row="0" BorderThickness="2" BorderBrush="Gray" CornerRadius="10" Margin="0,0,0,10">
+            <Grid x:Name="ClockArea">
+
+                <!-- Tymczasowy napis — później zastąpimy zegarem -->
+                <TextBlock Text="ZEGAR (tu będzie analogowy lub cyfrowy)"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontSize="16"
+                           Foreground="Gray"/>
+            </Grid>
+        </Border>
+
+        <!-- TEKST WYNIKU -->
+        <TextBlock x:Name="ResultText"
+                   Grid.Row="1"
+                   FontSize="32"
+                   TextAlignment="Right"
+                   HorizontalAlignment="Stretch"
+                   Margin="0,0,0,5" />
+
+        <!-- BIEŻĄCA OPERACJA -->
+        <TextBlock x:Name="CurrentOperationText"
+                   Grid.Row="1"
+                   FontSize="20"
+                   TextAlignment="Right"
+                   HorizontalAlignment="Stretch"
+                   Margin="0,40,0,10" />
+
+        <!-- PRZYCISKI -->
+        <UniformGrid Grid.Row="2" Columns="4" Rows="5">
+
+            <!-- Cyfry -->
+            <Button x:Name="Button7" Content="7" Click="NumberButton_Click" FontSize="20"/>
+            <Button x:Name="Button8" Content="8" Click="NumberButton_Click" FontSize="20"/>
+            <Button x:Name="Button9" Content="9" Click="NumberButton_Click" FontSize="20"/>
+            <Button x:Name="ButtonDivide" Content="/" Click="Operation_ClickDivide" FontSize="20"/>
+
+            <Button x:Name="Button4" Content="4" Click="NumberButton_Click" FontSize="20"/>
+            <Button x:Name="Button5" Content="5" Click="NumberButton_Click" FontSize="20"/>
+            <Button x:Name="Button6" Content="6" Click="NumberButton_Click" FontSize="20"/>
+            <Button x:Name="ButtonMultiply" Content="*" Click="Operation_ClickMultiply" FontSize="20"/>
+
+            <Button x:Name="Button1" Content="1" Click="NumberButton_Click" FontSize="20"/>
+            <Button x:Name="Button2" Content="2" Click="NumberButton_Click" FontSize="20"/>
+            <Button x:Name="Button3" Content="3" Click="NumberButton_Click" FontSize="20"/>
+            <Button x:Name="ButtonMinus" Content="-" Click="Operation_ClickMinus" FontSize="20"/>
+
+            <Button x:Name="Button0" Content="0" Click="NumberButton_Click" FontSize="20"/>
+            <Button x:Name="ButtonEquals" Content="=" Click="Equals_Click" FontSize="20"/>
+            <Button x:Name="ButtonClear" Content="C" Click="Clear_Click" FontSize="20"/>
+            <Button x:Name="ButtonPlus" Content="+" Click="Operation_ClickPlus" FontSize="20"/>
+
+        </UniformGrid>
+
+    </Grid>
+</Window>
